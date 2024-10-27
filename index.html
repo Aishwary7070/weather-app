@@ -1,0 +1,245 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+<body class="bg-gradient-to-b from-blue-800 to via-blue-700 to-blue-400 h-screen">
+
+
+    <!-- <nav class="bg-transparent border-gray-200 dark:bg-gray-900"> -->
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="images/location.png" class="h-8" alt="Flowbite Logo" />
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white" id="location">JHARKHAND</span>
+        </a>
+        <div class="flex md:order-2">
+            <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search"
+                aria-expanded="false"
+                class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                </svg>
+                <span class="sr-only">Search</span>
+            </button>
+            <div class="relative hidden md:block">
+                <button class="absolute inset-y-0 start-0 flex items-center ps-3 crusor-auto" id="search-btn">
+                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
+                    <span class="sr-only">Search icon</span>
+                </button>
+                <input type="text" id="search-navbar"
+                    class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Search city...">
+            </div>
+            <button data-collapse-toggle="navbar-search" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                aria-controls="navbar-search" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </button>
+        </div>
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+            <div class="relative mt-3 md:hidden">
+                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
+                </div>
+                <input type="text" id="search-navbar"
+                    class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Search...">
+            </div>
+            <!-- navbar ka center me kuch de sakta hai yaha pe -->
+        </div>
+    </div>
+
+    <div class="container flex flex-col justify-center">
+
+        <div class="main flex flex-col justify-center items-center py-8">
+            <img src="images/sunny-day.png" class="pb-1 font-sans text-white font-normal text-xl" alt="" id="weatherImg">
+            <span class="pb-1 font-sans text-white font-normal text-xl" id="degree">22°C</span>
+            <span class="pb-1 font-sans text-white font-normal text-xl" id="weather">Sunny</span>
+            <span class="pb-1 font-sans text-white font-normal text-xl" id="date-update">Monday, August 21, 2024</span>
+            <span class="pb-1 font-sans text-white font-normal text-xl" id="time-update">2 : 48 PM</span>
+        </div>
+        <div class="details flex flex-col" id="summary">
+            <div class="line-1 flex justify-center gap-28 mb-4">
+                <div class="child flex  items-center">
+                    <svg width="38" height="38" viewBox="0 0 57 48" fill="none" xmlns="http://www.w3.org/2000/svg"            xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="57" height="47.7794" fill="url(#pattern0_49_10)"/>
+                        <rect x="40" y="2.61029" width="15.0857" height="12.5735" fill="url(#pattern1_49_10)"/>
+                        <defs>
+                        <pattern id="pattern0_49_10" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_49_10" transform="matrix(0.0167647 0 0 0.02 0.0808824 0)"/>
+                        </pattern>
+                        <pattern id="pattern1_49_10" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image1_49_10" transform="matrix(0.0166695 0 0 0.02 0.0832637 0)"/>
+                        </pattern>
+                        <image id="image0_49_10" width="50" height="50" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACiUlEQVR4nO2aTYiNURjHD0IWSOSjZLCk0DShJAkLmQ2mZpRCIYUyETbKR8qKspGdjZXskAVZoGYxWZiSmVigfCYRNcbHT6c579y/4368cu97ztX51d2c5znv+/zf8/X0nGtMItEcAKuBC8B9YAC4B5wHVphmAGgB7lCd68BMEyvAAuA1+XgOzDOxAUwEnnrBXgO2AWuBncAtz/4QGG9iAjghAX4DOiv47QJ+im+3iQVgNPBKgjtWw/+s+PabWAAWS2CDwKQa/rOAH9KnxcQA0C5B9eXsYxd7xkoTA0CnBNWTs88j6bPexABJyAhpRAqZWu6Q3J39mnaNAHOlHa9PEtIw0oiUSGukrqSpVSJNrbqSplaJNLXqyv80tQ78o5CtQQJXgFbgiwR1KacQW6TLeAvMMaEAxgKPJSD7lafmFGJtL8V8O4gIC7BfAvnkV0OADhUCtHn2NuC72NtNCPh9nh+R9jHAZf7EFubOeM+whe6MGyFELPQqi9PEdorq7BDfJdL+FZhctJAtFXaqCW6aVWPAe9YbsS0vWshBefkVaV9EPkaqkUCvtG8uWki3vPyqtx3nYYr0eSDtG4sW0iUv75X2ccCHGiL6vAL4e7EtDXGpk2EL0jPEdqiGkE3iu8xb7FUL4I0S0y9BnJT2Ue7qQO9BLEP+fYi3Td8sXIQFOCxBfLajZAS38I8DF4GjwHzPvsa7XugwIWB4q30hgTyxqUfOvq3e2uixI9n4qCvg7gftgagJYFeloFx+ts9LND/aA9aEBthTZj3Y9OW0OzjX2VQdOAc88/wGg+VY5QA2uC/7N7wDVpnYAGa7ha0ZbTmGnN90EzMMC9prUxf5C8ddt9Vu1wQzkTDNwS/VeUrv7Kyi/gAAAABJRU5ErkJggg=="/>
+                        <image id="image1_49_10" width="50" height="50" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAARklEQVR4nO3VsQ2AUAxDwb9LSvYfJfOYFSgN3EkZwHpFzgEAAABeIckkucpvngzZ9FtDyqwiZVaRMvurIvOJhwgAAACcBjcazkF7HkhAOAAAAABJRU5ErkJggg=="/>
+                        </defs>
+                        </svg>
+                        
+                    <div class="child-2 flex flex-col">
+                        <span class="text-xs font-normal text-white px-1" >Min Temp</span>
+                        <span class="text-xs font-normal text-white px-1" id="min-temp">19°C</span>
+                    </div>
+                    <span class="text-white font-thin text-4xl px-16">|</span>
+                </div>
+                <div class="child flex  items-center">
+                    <svg width="38" height="38" viewBox="0 0 58 48" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect x="37" y="0.191162" width="21" height="17.6029" fill="url(#pattern0_12_22)"/>
+                        <rect y="0.191162" width="57" height="47.7794" fill="url(#pattern1_12_22)"/>
+                        <defs>
+                        <pattern id="pattern0_12_22" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_12_22" transform="matrix(0.0167647 0 0 0.02 0.0808823 0)"/>
+                        </pattern>
+                        <pattern id="pattern1_12_22" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image1_12_22" transform="matrix(0.0167647 0 0 0.02 0.0808824 0)"/>
+                        </pattern>
+                        <image id="image0_12_22" width="50" height="50" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAVElEQVR4nO3RsQ2AMBAEwe+/aZM7RCAvaKaCO+0MAPCutZmvWo7EKFKjSI0iNYrUKFKTK7IOG0c2ijxkTssNusuRGkVqFKlRpEaRGkVqflMEAOYjLpeMvG6ZmsnRAAAAAElFTkSuQmCC"/>
+                        <image id="image1_12_22" width="50" height="50" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACiUlEQVR4nO2aTYiNURjHD0IWSOSjZLCk0DShJAkLmQ2mZpRCIYUyETbKR8qKspGdjZXskAVZoGYxWZiSmVigfCYRNcbHT6c579y/4368cu97ztX51d2c5znv+/zf8/X0nGtMItEcAKuBC8B9YAC4B5wHVphmAGgB7lCd68BMEyvAAuA1+XgOzDOxAUwEnnrBXgO2AWuBncAtz/4QGG9iAjghAX4DOiv47QJ+im+3iQVgNPBKgjtWw/+s+PabWAAWS2CDwKQa/rOAH9KnxcQA0C5B9eXsYxd7xkoTA0CnBNWTs88j6bPexABJyAhpRAqZWu6Q3J39mnaNAHOlHa9PEtIw0oiUSGukrqSpVSJNrbqSplaJNLXqyv80tQ78o5CtQQJXgFbgiwR1KacQW6TLeAvMMaEAxgKPJSD7lafmFGJtL8V8O4gIC7BfAvnkV0OADhUCtHn2NuC72NtNCPh9nh+R9jHAZf7EFubOeM+whe6MGyFELPQqi9PEdorq7BDfJdL+FZhctJAtFXaqCW6aVWPAe9YbsS0vWshBefkVaV9EPkaqkUCvtG8uWki3vPyqtx3nYYr0eSDtG4sW0iUv75X2ccCHGiL6vAL4e7EtDXGpk2EL0jPEdqiGkE3iu8xb7FUL4I0S0y9BnJT2Ue7qQO9BLEP+fYi3Td8sXIQFOCxBfLajZAS38I8DF4GjwHzPvsa7XugwIWB4q30hgTyxqUfOvq3e2uixI9n4qCvg7gftgagJYFeloFx+ts9LND/aA9aEBthTZj3Y9OW0OzjX2VQdOAc88/wGg+VY5QA2uC/7N7wDVpnYAGa7ha0ZbTmGnN90EzMMC9prUxf5C8ddt9Vu1wQzkTDNwS/VeUrv7Kyi/gAAAABJRU5ErkJggg=="/>
+                        </defs>
+                    </svg>
+                    <div class="child-2 flex flex-col">
+                        <span class="text-xs font-normal text-white px-1">Max Temp</span>
+                        <span class="text-xs font-normal text-white px-1" id="max-temp">28°C</span>
+                    </div>
+                    <span class="text-white font-thin text-4xl px-16">|</span>
+                </div>
+                <div class="child flex  items-center">
+                    <svg width="38" height="38" viewBox="0 0 55 49" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect y="0.352966" width="54.4211" height="47.7794" fill="url(#pattern0_12_51)"/>
+                        <defs>
+                        <pattern id="pattern0_12_51" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_12_51" transform="matrix(0.02 0 0 0.0180769 0 0.0480769)"/>
+                        </pattern>
+                        <image id="image0_12_51" width="50" height="50" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACe0lEQVR4nO2ZOWgVQRyHJ55FLETUgCCGqFELEUWQYOF9FBKsrARBRAS1EEEQjyYQJFVCSKMkiNiIeCtKQMEoDwRRhIBaCGLtBeKF0U+Gt4/EdfbNzW7Cfs0Wb+f/m+/t7M7MrhAlJSUlEw5gLtAPdAONYjwCTAGGGOWSGI8Ap/mf3RHz1gG98hiy6DLgh0LkPdAULOjfvG9JhsxdHqrwI7K5ECRkNGsq8CyV8VQObd/C26jPCLA0oMixjJyjMa9GjYuBJOYDXzIyvgLNroXbDCRqV2VeAJFrmpyrroW7MOeAp8RGw5z1LsXvWoj0eYpUDHOeAA22xR9aiJz3kNiEHRtsA85aFD/uIXLTUuR6rHH7C1joKNEE/LYUGQHm2AZdNih8RtFumnxc6sYzsA839tqKNGoei33A5FSbWcDL5PcBTf0BR5F+K5ExgTvkihcYBl4kHVirOK8BuJEK3V+n7gNHkftOIhbCBzNmZeUyBhh0FBmMKdFcZ4nxGJikaCOHpgu9MUXuacIPOyxKs9gSS2IPeuTVWqC4p+RsbUPFenY3lJgNfDDsxB1F+yXAJ8P2H4HW4BJJR3os/9HNihqrgHeadm+BlbEkFgE/LUWeZ9z4M4BTwOvU+a+Ak/L3KBJJ+DncaNfUnQm0yGO0zqfec313FBkSRYHq5fZhhSgCVJcqPnQUQaIFf4aLILIzgIjch0zPW+QIYWidKCKL8xbZFWho5ft5guocIvfOPlREEUC/bNdxSBQBYLXDG5Aab3J/Yo0FOOEgIZc1a0SRoLox6gT+GEp8BraLogK0K5bfaW7nPm9YfDDdmmy0biUvHK4ke4wwn89KSkpKJH8Bnk0rA6iPu6kAAAAASUVORK5CYII="/>
+                        </defs>
+                    </svg>
+                        
+                    <div class="child-2 flex flex-col">
+                        <span class="text-xs font-normal text-white px-1">Humidity</span>
+                        <span class="text-xs font-normal text-white px-1" id="humidity">47%</span>
+                    </div>
+                    <span class="text-white font-thin text-4xl px-16">|</span>
+                </div>
+                <div class="child flex  items-center">
+                    <svg width="38" height="32" viewBox="0 0 58 42" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect y="0.0588379" width="57.5163" height="41.9118" fill="url(#pattern0_12_61)"/>
+                        <defs>
+                        <pattern id="pattern0_12_61" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_12_61" transform="matrix(0.0145739 0 0 0.02 0.135653 0)"/>
+                        </pattern>
+                        <image id="image0_12_61" width="50" height="50" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACz0lEQVR4nO2Zy2/NQRTHxyNF1cLCP6AeKxIRj3gktSGVepQSsaJY0J1iI0RYCBsSkViIXSPEXhvWtjYiVEKLNlERC+o2LT4y7pFMp/f3u/N7zL1z4/dJ7uLmnjvnfH+/mXNmzihVUFCQC0Az0A0MAG+BCWAEeAL0AC0qdIAOYIx4RoEuFSrAOeA3bmi7syo0gD3AL0cRpph9CXzMAw4DD4Eh4AfwDXgJ9OmxgKasQt5YQZaAS8AyCWApcB74XmGaNTuMfwAYdng4g8CuLEI+WiI2RditB8Yt5z0x484GbpGcK8CsNEI6ZZHrz+4qthcsp/0xtmlE/ONqYiHidI6jXSvTGY2w62ImOpXfATYCi4GFwAbghvxmr8GOVGIchTTZwUXY6fluoqfvuphxVwHvrf+8cn3AaYSstAOMsDPr0aReXw5jr5ZsZrLfl5DrLmtEdgcTkjyOJRj/pjX+vVwFGPVmynJ0PMa+xSU9m8j6MRlUeQDMB9bKIrWL5lDSQB38LbJ8fIkz3gm8Ixv6zezIU4TxFk3GlWMBTCviqPIAsNny9SLO+EMGETolbvEhQgPctfz1qSiAdjlruFAS2/vAQW95Xf2Nq63COvRXFH0AbAe+WiJeA3NV6ABLZHY8qnAW0t+3VRsgj6zlmzMuTyJr1vLJJHDa9ZVmyVo+eaYre5K5mSRr+WQMeC77qzZnAQWhgp+sVZJN5APgkM/CWeuspYvZVuUTape19Oay26eQ9hpmrZ/an2oUKB/A1gC3JXiT4bwPYDVBdwulQpucUI0IcM0SMqAaEWCFS9soeFwbeXVDFzqXBrNra7UuyB3GZ/lUa3ZftIQ8VqHA9EJaimpCSGPabn2eUqHAzMa0boleBpbLhVCrvAlbxEhQdYRyfUhzRbdXhQbQm/DStFeFCuW92qcqIvR06lShAywAjgBPRdSUBN8PnNS3UfWOsaDgf+QP6iQJJvxA6k4AAAAASUVORK5CYII="/>
+                        </defs>
+                    </svg>
+                    <div class="child-2 flex flex-col">
+                        <span class="text-xs font-normal text-white px-1">Wind</span>
+                        <span class="text-xs font-normal text-white px-1" id="wind">3.1km/hr</span>
+                    </div>
+                    <!-- <span class="text-white font-thin text-4xl px-16">|</span> -->
+                </div>
+            </div>
+            <div class="line justify-center items-center flex">
+                <hr class="min-w-[1293px]">
+            </div>
+            <div class="line-2">
+                <div class="line-1 flex justify-center gap-28 mt-4" id="line-2">
+                    <div class="child flex  items-center">
+                        <svg width="38" height="38" viewBox="0 0 43 48" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="43" height="48" fill="url(#pattern0_17_3)"/>
+                            <defs>
+                            <pattern id="pattern0_17_3" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_17_3" transform="matrix(0.02 0 0 0.0179167 0 0.0520833)"/>
+                            </pattern>
+                            <image id="image0_17_3" width="50" height="50" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADGklEQVR4nO2ZTYhNYRjHL+PrGpJBGNdXTKnRlJlxJ8OSGpOaqCEbd6REbIQsLExJaTY+ViyEBQr5XlAapciGxdQkZYY0SyZySz6an07OzTOP+/Gcc9473XT+dTb3vr/nef73vue87/ucRCJWrFix/ksBU4ANQCog1wSkjeM681xrvdyRileJHvBHn4E6I7OHv9pfZNxOiusd0OzKyLAIfNvInBPMF2B2gXEXShjJmYn+zwAnGK1lBqYRGBHMkQLjVgFvKa1WF0ZmAt9F0H0Bp6SnJyHySnWGKj5P0F4R9JaR2SsY74dIVoKRHhG038isVsXUV4KRQyLosJFZrIpZb2AywDXgermMZOQ0MTLVqpiOEuNb1PiyG8kamamqmI0lxqfHwshREXTAyNSpYpoMzI5yT62HIug9I7NLMD+BaQFzujUCLAV+iaAHjNwLwTwPkde5kdPql11gYNaNKsO4iEo5NQLMAr6KgDeM3F2115phYJL+bkD++86MHFMBGw1MvdpnnTTmastjILoRoAr4IIL1GrlTamtSa+RSaqftzIjeYmwycoOCuRww53xgs3+wcmbkoJrnEwzMQlVAe4T8zoycEYGeGhn9tJpXCUauiEB3jEyHKmBSwJy1wBbXU+uSCPTYyLSrAmoC5EuV62aXT58+I7NGFbAiQL62AiYiG9ktAn0DphuYGrWGbA+QL+nt45wviMByFWyrkXspmJsR8jtd2ftFsPNGplswn4DxlWDkrAj2OuQjeGUlGNkmgnlzt8rATAZ+hCmCcp3Z/f6r1FwjN2RpmY7ZmZ1/b/gGI/dKMMeNTNqpEf8RmuuI6yZzt/iuIc9imPuuTzCPxOftY3ZmB8Z5WxKKy1uBlwTsrHvqClBH9Knl93u9Lng+jRTqUaltjdbVgDU4WxBbVPM6p54STTm59uT0xrIzkHJ9sx9WAZ8BEw1H3axgsoX6vv5rhQHK/VrBv1/u+8E+AotCdCYzRcZZXvQMemtTJCOik/LeetQV3EXvKjGmy2CiObIJkXBOCMa7X6qNb7c681ytTv6JWLFixUpUkn4DIBQ6Mo4VEKQAAAAASUVORK5CYII="/>
+                            </defs>
+                        </svg>
+                            
+                        <div class="child-2 flex flex-col">
+                            <span class="text-xs font-normal text-white px-1">Pressure</span>
+                            <span class="text-xs font-normal text-white px-1" id="pressure">1345</span>
+                        </div>
+                        <span class="text-white font-thin text-4xl px-16 " style="position: relative; left:16px;" >|</span>
+                    </div>
+                    <div class="child flex  items-center">
+                        <svg width="38" height="38" viewBox="0 0 44 45" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="44" height="45" fill="url(#pattern0_17_8)"/>
+                            <defs>
+                            <pattern id="pattern0_17_8" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_17_8" transform="matrix(0.02 0 0 0.0195556 0 0.0111111)"/>
+                            </pattern>
+                            <image id="image0_17_8" width="50" height="50" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC4ElEQVR4nO2Zy0tVURSHb97sYVE5q1kEUVTWuBppztS0IFOxqAbW35BJAzGaawVBPgjqP4gGaeLtRQ0KKkJqYDYoC4rUXkJ9sXALh0t3n7XOoyTOBwcu17t+a/3O3mfts7e5XEZGRkZGxiIBWApsB9qAbqAXuOquXved/G0bkM8tJoAVwGHgOvAJPfLba0CzaPxLAxuAc8AH4vMe6AHW/00Da13SWZJn1k2/NWmbqAfekD5vgYNpGFjtHlgt74ArQCdwzF3yuR+YMugMAauSMiEd5oUy8RhQDZR59MqAGqCg1HwObI1rolbZiaaBQxH0pdvNKPQ/ivmoJpqAOUWS18COSEnm81QBk4o8P4BGq3gd8F05ElVRTRRN38+KfHJjm7SiB5QjQZTp5MnboswZPjLAXuVICGNJmQjkv6PM/Q3YU0pkk1thtVSHFNUIjLpFTq7bQENIzD5DfmnjG4sFKoBnxnXC12LPe2J7PHF54818CqwMClzCRn/ISIRR74kfNNZycSFwP3ZOewqR6RTGiCe+01jLL/EggRMRjBz3FKJZ4KY98Sci1DMhgeP/gZFxCTyS8NSS7hTGsCf+TIR62iVwicxZY+CAp5AGRXydJ37IWMst8bAQvMW4UZry7bndxqsU3Qm23xlgc7FIOzZqFJuwEZdMrmHfSATeti20lhK6bBAp5BLETfF7hvwXfGLLgJsGseYEjcgxkZYbUmuYYIXb6WmQKbMzARO7DM/offX2F6gEniiFJ+OYcSa0BxqPgXXWBJXGkWmJ8Ey0GUZiVGqy3qjgKaKlr991r+L5kBZba3ywB4HlkUwUJT8FfDUklrVgAOgKHAd1uYIs68QXoCO2gT9svKxvAHEoyEKdqImied0KvErRwEt3TDT/2pEmQDlwFHiQoAFpq6JZnroBT/s8CzxymxwtP4GHLjb2WpQocooupxvASffi2Bf4R0+f+64D2J36iXtGRkZGRkZOz28cw06ZUQ4MfQAAAABJRU5ErkJggg=="/>
+                            </defs>
+                        </svg>
+                            
+                        <div class="child-2 flex flex-col">
+                            <span class="text-xs font-normal text-white px-1">Visibility</span>
+                            <span class="text-xs font-normal text-white px-1" id="visible">12.4km</span>
+                        </div>
+                        <span class="text-white font-thin text-4xl px-16" style="position: relative; left:27px;">|</span>
+                    </div>
+                    <div class="child flex  items-center">
+                        <svg width="48" height="38" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="50" height="50" fill="url(#pattern0_17_6)"/>
+                            <defs>
+                            <pattern id="pattern0_17_6" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_17_6" transform="scale(0.02)"/>
+                            </pattern>
+                            <image id="image0_17_6" width="50" height="50" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABzElEQVR4nO3YvWoUURiA4RMIColFIqTX2oAB7e1EECEWwTsIigQLqzSJIjYGQUth4yWIiFaaxmvIBZjKwhBLf8A84ZBZWCYzO7Nx1p3B88LXzMz3885hzuxOCIlEIpEYADdihC6D6/iBX7gVOi7Rp3syTkp0T0a5RHdkVEu0X0Z9ifbKGF2ifTKYw0u8OmXE3LlJeyQSif8dTONKLqZD18BCwXtjIXQNSaRltHpFcA0z4xbBTOz11wOXFL+Jn/iMc+MScSzxCb9xuzGBrPhyVrjPTtXKYArzuZiqIbEz0Cf2XG5KYhZfC+5upcyIffISfWLv2aaaLGG/ROZsA/XPlEjsx96NSAw0u4xvuUbPG6z/NFf7AFebqj9sZbaGXHcR9/Aa77PYxl1cGJL3bGwrUSKzWXJuEW/xRznx3BtcKqmxOXaJYWAt257rEv/j3w9tAo+cno3QBnCnZMDv6OFhFtvZsSJWJi1xvmC4w+yhPfFlJHspbhWIxB1qfjIWx4M9KRhqrUbeg4K8x/9m6uKBvuSGeTdC7odc7l7VT5hRh1vBao1YL7irL2rmrmYf5vKs18ytfqawq/3sJpEurkgPH1sevWZ2hEQikQgT4gghmtlBuedp4gAAAABJRU5ErkJggg=="/>
+                            </defs>
+                        </svg>
+                        <div class="child-2 flex flex-col">
+                            <span class="text-xs font-normal text-white px-1 ">Sunrise</span>
+                            <span class="text-xs font-normal text-white px-1" id="sunrise">05:47AM</span>
+                        </div>
+                        <span class="text-white font-thin text-4xl px-16" style="position: relative; left:8px;">|</span>
+                    </div>
+                    <div class="child flex  items-center">
+                        <svg width="48" height="38" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="50" height="50" fill="url(#pattern0_17_5)"/>
+                            <defs>
+                            <pattern id="pattern0_17_5" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_17_5" transform="scale(0.02)"/>
+                            </pattern>
+                            <image id="image0_17_5" width="50" height="50" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB4klEQVR4nO2ZzUoCURiGp3Qh/eyEivAOVJSW1SJqmZtWIohB6+gSatnOGxDaRRBRdANtWtQNRF2C/RiFhWT0xIEzdjrMOKYzOhPngQ/E+b7vvK9n5pxxxrIMBoPB8N8AUsCCjJQVVYAqP1StqIIxEjLMjISNSM4IkADOgYYSLcVISzsmchNWGAEmgQu8uQSmrTCDt5nwm+jBTHRMdDETPRMOZqJrwgaYEtH5wmAYHKAA7MsoWFGFKN6iOGGMDAtgGcj7fWoBedHbN6Eegy0Cr8CzeKjglxEgCzwAb8CK78K1wZLAiyJODJxxyY0BNSVXfI655GZkLxsxRjJoMxXgszMk3ANpeWxMLrln8pfVaQKnwLrIlTVp2cNG9K4EakIxU9bM1IEN4JreuZI1dc1EeSgmFDMlzYwTYlbuZLx75IpepaGaUMwUgbYm6As4BJaAuJIbl6vdkcxRET2KIzEhxc3K/9824oJd7aFuDXhU6p6AmeGodhZ0oK00mT/UZuUyblMLVq27kHnttNrso8eWUv8BzAWjtruIHUXEDTDeRw+x19wqfbaDUdtdxIkiYHeAPntKn2N/Vf7ecRsu0dY2ukaf0dRWr4ZLZAYxkiM85IwRYEJ5dTbqmPDzsjEYDAaD5QffPwYZPSZUVjEAAAAASUVORK5CYII="/>
+                            </defs>
+                        </svg>
+                            
+                        <div class="child-2 flex flex-col">
+                            <span class="text-xs font-normal text-white px-1">Sunset</span>
+                            <span class="text-xs font-normal text-white px-1" id="sunset">05:47AM</span>
+                        </div>
+                        <!-- <span class="text-white font-thin text-4xl px-16">|</span> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+<script  src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+<script type="module" src="script.js"></script>
+
+</html>
